@@ -44,6 +44,7 @@ def lifeline(index):
             return False
     else:
         print('you Already used 5050')
+        return 'pass'
 
 def option(index):
     j=0
@@ -62,7 +63,10 @@ def que():
     index=0
     while index<len(que_list):
         print("Q.",index+1,que_list[index],"?")
-        if(option(index)):
+        Result = option(index)
+        if Result=="pass":
+            index-=1
+        elif Result==True:
             print("Congractualtion")
         else:
             print("you Losse !")
@@ -72,4 +76,8 @@ def que():
 def main():
     que()
 main()
+
+
+
+
 	
